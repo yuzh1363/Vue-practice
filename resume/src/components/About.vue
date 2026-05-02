@@ -1,5 +1,5 @@
 <template>
-    <section id="About" class="p-10 flex flex-col gap-10">
+    <section id="about" class="px-10 py-20 flex flex-col gap-10">
         <div class="bg-sky-300 w-40 h-40 rounded-2xl mx-auto overflow-hidden">
             <!-- <img src="https://images.plurk.com/7pNtR9dfDcLSj9TGyVCC2z.png" alt="" > -->
         </div>
@@ -26,4 +26,6 @@
 
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+</style>

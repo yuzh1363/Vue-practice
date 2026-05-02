@@ -1,7 +1,7 @@
 <template>
-    <section id="Skill" class="bg-blue-50">
+    <section id="skill" class="bg-blue-50 py-14">
         <h2 class="text-3xl font-bold text-center pt-10 text-sky-700">技能專長</h2>
-        <div class="py-10 flex flex-col gap-5 md:max-w-10/12 md:mx-auto lg:flex-row ">
+        <div class="py-10 flex flex-col gap-5 w-10/12 mx-auto md:max-w-10/12 lg:flex-row ">
             <div class="rounded-2xl p-5 shadow-sm shadow-sky-500 bg-gray-50 lg:max-w-1/3">
                 <div class="border-b-3 mb-4 border-b-sky-400">
                     <h2 class="text-xl font-bold text-sky-600">前端技術</h2>

@@ -1,31 +1,34 @@
 <template>
-    <header class="shadow-md bg-blue-50 w-10/12 rounded-4xl mx-auto mt-3 md:mt-5 ">
-        <nav class="flex justify-between items-center px-6 h-14">
-            <h1 class="text-xl content-center font-bold"><span class=" text-blue-400">Yuying</span>.Zhang</h1>
+    <header class=" bg-white/80">
+        <div class="w-10/12 mx-auto mt-3 md:mt-5 ">
+            <nav class="flex justify-between items-center px-6 h-14 shadow-md rounded-4xl bg-blue-50">
+                <h1 class="text-xl content-center font-bold"><span class=" text-blue-400">Yuying</span>.Zhang</h1>
 
-            <!-- 電腦版Menu -->
-            <div class=" bg-blue-50 hidden md:block content-center">
-                <ul class="flex" >
-                    <li :class="libtnpc" v-for="item in menuitems">{{ item }}
-                    </li>
-                </ul>
-            </div>
+                <!-- 電腦版Menu -->
+                <div class=" bg-blue-50 hidden md:block content-center">
+                    <ul class="flex">
+                        <RouterLink v-for="item in menuitems" :to="item.path">
+                            <li :class="libtnpc">{{ item.name }}</li>
+                        </RouterLink>
+                    </ul>
+                </div>
 
-            <button class="h-fit p-1.5 text-2xl hover:shadow-lg rounded-full md:hidden">
-                <i v-if="!isMenu" class="fa-solid fa-bars" @click="handleMenu"></i>
-                <i v-else class="fa-solid fa-xmark" @click="handleMenu"></i>
-            </button>
+                <button class="h-fit p-1.5 text-2xl hover:shadow-lg rounded-full md:hidden">
+                    <i v-if="!isMenu" class="fa-solid fa-bars" @click="handleMenu"></i>
+                    <i v-else class="fa-solid fa-xmark" @click="handleMenu"></i>
+                </button>
 
-            <!-- 手機版menu -->
-            <div v-show="isMenu" class="absolute md:static bg-blue-50 w-full left-0 top-16 rounded-4xl py-2 shadow-md md:shadow-none md:hidden">
-                <ul class="flex flex-col items-center md:flex-row h-fit gap-3" >
-                    <li :class="libtn" class="" v-for="item in menuitems">{{ item }}
-                    </li>
-                </ul>
-            </div>
-        </nav>
+                <!-- 手機版menu -->
+                <div v-show="isMenu"
+                    class="absolute md:static bg-blue-50 w-full left-0 top-16 rounded-4xl py-2 shadow-md md:shadow-none md:hidden">
+                    <ul class="flex flex-col items-center md:flex-row h-fit gap-3">
+                        <li :class="libtn" class="" v-for="item in menuitems">{{ item.name }}
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
     </header>
-
 </template>
 
 <script setup>
@@ -39,7 +42,11 @@ const handleMenu = () => {
     isMenu.value = !isMenu.value
 }
 
-const menuitems = ref(["個人介紹", "技能專長", "作品集", "工作經歷"])
+const menuitems = ref([
+    { name: '個人介紹', path: '/about' },
+    { name: '技能專長', path: '/skill' },
+    { name: '作品集', path: '/project' },
+    { name: '工作經歷', path: '/exp' },])
 </script>
 
 <style lang="scss" scoped></style>

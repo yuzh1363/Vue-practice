@@ -1,5 +1,5 @@
 <template>
-    <header class="shadow-md relative bg-blue-50 w-10/12 rounded-4xl mx-auto mt-3 md:mt-5 ">
+    <header class="shadow-md bg-blue-50 w-10/12 rounded-4xl mx-auto mt-3 md:mt-5 ">
         <nav class="flex justify-between items-center px-6 h-14">
             <h1 class="text-xl content-center font-bold"><span class=" text-blue-400">Yuying</span>.Zhang</h1>
 
@@ -17,7 +17,7 @@
             </button>
 
             <!-- 手機版menu -->
-            <div v-show="isMenu" class="absolute md:static bg-blue-50/50 w-full left-0 top-16 rounded-4xl py-2 shadow-md md:shadow-none md:hidden">
+            <div v-show="isMenu" class="absolute md:static bg-blue-50 w-full left-0 top-16 rounded-4xl py-2 shadow-md md:shadow-none md:hidden">
                 <ul class="flex flex-col items-center md:flex-row h-fit gap-3" >
                     <li :class="libtn" class="" v-for="item in menuitems">{{ item }}
                     </li>
